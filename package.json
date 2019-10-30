@@ -1,15 +1,28 @@
 {
   "name": "vue-electron-app",
   "version": "0.1.0",
+  "main": "public/main.js",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "electron-dev": "concurrently \"cross-env BROWSER=none npm run serve\" \"wait-on http://localhost:8080 && electron .\""
   },
   "dependencies": {
+    "axios": "^0.19.0",
+    "bootstrap": "^4.3.1",
+    "bootstrap-vue": "^2.0.4",
+    "concurrently": "^5.0.0",
     "core-js": "^3.3.2",
-    "vue": "^2.6.10"
+    "cross-env": "^6.0.3",
+    "electron": "^7.0.0",
+    "electron-builder": "^22.1.0",
+    "electron-is-dev": "^1.1.0",
+    "reselect": "^4.0.0",
+    "vue": "^2.6.10",
+    "vuex": "^3.1.1",
+    "wait-on": "^3.3.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.0.0",
@@ -19,6 +32,19 @@
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "vue-template-compiler": "^2.6.10"
+  },
+  "prettier": {
+    "printWidth": 200,
+    "tabWidth": 2,
+    "useTabs": true,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "none",
+    "bracketSpacing": true,
+    "jsxBracketSameLine": true,
+    "jsxSingleQuote": true,
+    "arrowParens": "avoid",
+    "proseWrap": "always"
   },
   "eslintConfig": {
     "root": true,
