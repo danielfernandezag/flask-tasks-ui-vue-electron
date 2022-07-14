@@ -30,6 +30,7 @@
 								<div class="col-sm" v-if="tasksDone.length > 0">
 									<h5 class="text-white">Done</h5>
 									<TaskList :type="'done'" />
+									hello
 								</div>
 							</div>
 						</div>
